@@ -1,19 +1,15 @@
 pipeline {
     agent any
 
-    parameters {
-    choice choices: ['apply', 'destroy'], description: 'Please enter your option or action', name: 'action'
-     }
-
     environment {
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-        AWS_DEFAULT_REGION = "eu-west-2"
+        AWS_DEFAULT_REGION = "us-west-2"
     }
     stages {
         stage('Checkout') {
             steps {
-           git branch: 'main', url: 'https://github.com/ooghenekaro/nodejs-webapp.git'
+           git branch: 'main', url: 'https://github.com/akinrslan/nodejs-webapp-2.git'
   
             }
         }
