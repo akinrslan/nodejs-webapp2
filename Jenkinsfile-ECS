@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    parameters {
+    choice choices: ['apply', 'destroy'], description: 'Please enter your option or action', name: 'action'
+     }
     environment {
         AWS_ACCESS_KEY_ID = credentials('akin_AWS_ACCESS_ID')
         AWS_SECRET_ACCESS_KEY = credentials('akin_AWS_SECRETT_ACCESS_KEY')
