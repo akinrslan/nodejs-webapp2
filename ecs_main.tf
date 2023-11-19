@@ -1,6 +1,6 @@
 # Define the provider for AWS
 provider "aws" {
-  region = "eu-west-2"  
+  region = "us-west-2"  
 }
 
 # Create an ECS cluster
@@ -40,8 +40,8 @@ resource "aws_ecs_service" "my_service" {
   desired_count   = 1
   launch_type     = "FARGATE"
   network_configuration {
-    subnets          = ["subnet-0e8b3d7199bf251a4"]  
-    security_groups  = ["sg-0dab44e5556cb4879"]      
+    subnets          = ["subnet-0a6c1993b60f3ea57"]  
+    security_groups  = ["sg-05cdd6581da6fac71"]      
     assign_public_ip = true
   }
 }
